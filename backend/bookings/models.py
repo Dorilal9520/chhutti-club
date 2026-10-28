@@ -15,6 +15,7 @@ class Destination(models.Model):
 
 
 class Package(models.Model):
+    image = models.ImageField(upload_to="packages/", blank=True, null=True)
     destination = models.ForeignKey(Destination, on_delete=models.CASCADE, related_name='packages')
     title = models.CharField(max_length=150)
     description = models.TextField(blank=True)
