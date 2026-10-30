@@ -47,12 +47,34 @@ class Booking(models.Model):
         CONFIRMED = 'confirmed', 'Confirmed'
         CANCELLED = 'cancelled', 'Cancelled'
 
+    class PaymentStatus(models.TextChoices):
+        UNPAID = 'unpaid', 'Unpaid'
+        SUBMITTED = 'submitted', 'Payment Submitted'
+        VERIFIED = 'verified', 'Verified'
+        REJECTED = 'rejected', 'Rejected'    
+
+        
+    payment_status = models.CharField(
+        max_length=10,
+        choices=PaymentStatus.choices,
+        default=PaymentStatus.UNPAID
+    )
+
+    payment_reference = models.CharField(
+        max_length=100,
+        blank=True,
+        default=''
+    )    
+
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='bookings')
     package = models.ForeignKey(Package, on_delete=models.CASCADE, related_name='bookings')
     start_date = models.DateField()
     guests = models.PositiveIntegerField(validators=[MinValueValidator(1)])
     total_price = models.DecimalField(max_digits=12, decimal_places=2, editable=False)
     status = models.CharField(max_length=10, choices=Status.choices, default=Status.PENDING)
+    payment_status = models.CharField(max_length=10, choices=PaymentStatus.choices, default=PaymentStatus.UNPAID)
+
+    payment_reference = models.CharField(max_length=100, blank=True, default='')
     created_at = models.DateTimeField(auto_now_add=True)
 
     def save(self, *args, **kwargs):

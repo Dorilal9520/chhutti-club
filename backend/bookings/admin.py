@@ -28,10 +28,67 @@ class PackageAdmin(admin.ModelAdmin):
     )
 
 
+
 @admin.register(Booking)
 class BookingAdmin(admin.ModelAdmin):
-    list_display = ('user', 'package', 'start_date', 'guests', 'total_price', 'status')
-    list_filter = ('status',)
+    list_display = (
+        'user',
+        'package',
+        'start_date',
+        'guests',
+        'total_price',
+        'status',
+        'payment_status',
+        'payment_reference',
+    )
+
+    list_filter = ('status', 'payment_status')
+
+    search_fields = (
+        'user__username',
+        'package__title',
+        'payment_reference',
+    )
+
+    readonly_fields = (
+        'total_price',
+        'created_at',
+        'payment_reference',
+        'payment_status',
+    )
+
+    actions = ['verify_payment', 'reject_payment']
+
+    @admin.action(description='Verify selected payments')
+    def verify_payment(self, request, queryset):
+        pending = queryset.filter(
+            payment_status=Booking.PaymentStatus.SUBMITTED
+        )
+
+        count = pending.update(
+            payment_status=Booking.PaymentStatus.VERIFIED,
+            status=Booking.Status.CONFIRMED,
+        )
+
+        self.message_user(
+            request,
+            f'{count} payment(s) verified and booking(s) confirmed.'
+        )
+
+    @admin.action(description='Reject selected payments')
+    def reject_payment(self, request, queryset):
+        pending = queryset.filter(
+            payment_status=Booking.PaymentStatus.SUBMITTED
+        )
+
+        count = pending.update(
+            payment_status=Booking.PaymentStatus.REJECTED
+        )
+
+        self.message_user(
+            request,
+            f'{count} payment(s) rejected.'
+        )
 
 
 @admin.register(Review)

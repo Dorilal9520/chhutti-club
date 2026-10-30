@@ -115,4 +115,44 @@ def seats_left(request, pk):
     return Response({'seats_left': package.seats_left(date)})
 
 
+@api_view(['POST'])
+@permission_classes([permissions.IsAuthenticated])
+def submit_payment(request, pk):
+    booking = get_object_or_404(
+        Booking,
+        pk=pk,
+        user=request.user
+    )
+
+    if booking.status == Booking.Status.CANCELLED:
+        return Response(
+            {'detail': 'Cancelled booking ke liye payment submit nahi kar sakte.'},
+            status=status.HTTP_400_BAD_REQUEST
+        )
+
+    if booking.payment_status == Booking.PaymentStatus.VERIFIED:
+        return Response(
+            {'detail': 'Payment already verified hai.'},
+            status=status.HTTP_400_BAD_REQUEST
+        )
+
+    reference = request.data.get('payment_reference', '').strip()
+
+    if not reference or len(reference) > 100:
+        return Response(
+            {'detail': 'Valid transaction reference required hai.'},
+            status=status.HTTP_400_BAD_REQUEST
+        )
+
+    booking.payment_reference = reference
+    booking.payment_status = Booking.PaymentStatus.SUBMITTED
+    booking.save()
+
+    return Response({
+        'message': 'Payment details submitted. Admin verification pending hai.',
+        'payment_status': booking.payment_status,
+        'booking_status': booking.status,
+    })    
+
+
     

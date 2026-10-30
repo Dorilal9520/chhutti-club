@@ -60,10 +60,26 @@ class BookingSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Booking
-        fields = ('id', 'package', 'package_title', 'start_date',
-                  'guests', 'total_price', 'status', 'created_at')
-        read_only_fields = ('total_price', 'status', 'created_at')
+        fields = (
+    'id',
+    'package',
+    'package_title',
+    'start_date',
+    'guests',
+    'total_price',
+    'status',
+    'payment_status',
+    'payment_reference',
+    'created_at',
+)
 
+    read_only_fields = (
+    'total_price',
+    'status',
+    'payment_status',
+    'payment_reference',
+    'created_at',
+)
     def validate(self, data):
         package = data['package']
         start = data['start_date']
