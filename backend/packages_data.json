@@ -1,0 +1,280 @@
+[
+{
+  "model": "bookings.destination",
+  "pk": 1,
+  "fields": {
+    "name": "Bageshwardham",
+    "country": "INDIA",
+    "description": "Best place in the world.",
+    "image": "destinations/26779567.jpg"
+  }
+},
+{
+  "model": "bookings.destination",
+  "pk": 2,
+  "fields": {
+    "name": "Goa",
+    "country": "India",
+    "description": "Beaches, cafes aur nightlife ke liye mashhoor.",
+    "image": "destinations/allan-d-souza-9ZxxlY8OM24-unsplash.jpg"
+  }
+},
+{
+  "model": "bookings.destination",
+  "pk": 3,
+  "fields": {
+    "name": "Manali",
+    "country": "India",
+    "description": "Himachal ki pahadiyon me baraf, adventure aur sukoon.",
+    "image": "destinations/jinu-k-sPOxoPFgHI0-unsplash.jpg"
+  }
+},
+{
+  "model": "bookings.destination",
+  "pk": 4,
+  "fields": {
+    "name": "Jaipur",
+    "country": "India",
+    "description": "Pink City, jahan har mod par kila ya mahal milta hai.",
+    "image": "destinations/aditya-siva-6rDbvXzIVpQ-unsplash.jpg"
+  }
+},
+{
+  "model": "bookings.destination",
+  "pk": 5,
+  "fields": {
+    "name": "Rishikesh",
+    "country": "India",
+    "description": "Ganga kinare yoga, rafting aur adhyatm ki nagri.",
+    "image": "destinations/travel-with-enfield-mxoH7NtRJA8-unsplash.jpg"
+  }
+},
+{
+  "model": "bookings.destination",
+  "pk": 6,
+  "fields": {
+    "name": "Udaipur",
+    "country": "India",
+    "description": "Jheelon aur mahalon ka shehar.",
+    "image": "destinations/subhashis-das-7_bcOzYkTcE-unsplash_I9e0Jim.jpg"
+  }
+},
+{
+  "model": "bookings.destination",
+  "pk": 7,
+  "fields": {
+    "name": "Munnar",
+    "country": "India",
+    "description": "Kerala ke chai ke baagan aur dhundh bhari pahadiyan.",
+    "image": "destinations/manoj-baishya-tVvAQUZva9g-unsplash.jpg"
+  }
+},
+{
+  "model": "bookings.destination",
+  "pk": 8,
+  "fields": {
+    "name": "Richi",
+    "country": "INDIA",
+    "description": "Best place in the world.",
+    "image": "destinations/patricia-prudente-6UyWK8mDcWo-unsplash.jpg"
+  }
+},
+{
+  "model": "bookings.package",
+  "pk": 1,
+  "fields": {
+    "destination": 1,
+    "title": "Weekend Getaway",
+    "description": "Pahadon aur jharno ke beech 3 din ki Shaant trip. Family aur friends dono ke liye achha.",
+    "itinerary": "Day 1: Pahunchna, hotel check-in, shaam ko kirtan bhajan\r\nDay 2: Sightseeing aur gao explore karna\r\nDay 3: Breakfast ke baad wapsi",
+    "price_per_person": "8000.00",
+    "duration_days": 3,
+    "max_guests": 10,
+    "seats_per_date": 20,
+    "available_from": "2026-10-21",
+    "available_to": "2027-01-01",
+    "is_active": true,
+    "created_at": "2026-10-21T04:16:49.837Z"
+  }
+},
+{
+  "model": "bookings.package",
+  "pk": 2,
+  "fields": {
+    "destination": 2,
+    "title": "Goa Beach Escape",
+    "description": "Samundar kinare 5 din ka aaramdayak holiday, family aur couples dono ke liye.",
+    "itinerary": "Day 1: Pahunchna, hotel check-in, Baga beach ki shaam\nDay 2: North Goa beaches aur Fort Aguada\nDay 3: Water sports aur sunset cruise\nDay 4: South Goa, churches aur local market\nDay 5: Breakfast ke baad wapsi",
+    "price_per_person": "14500.00",
+    "duration_days": 5,
+    "max_guests": 8,
+    "seats_per_date": 20,
+    "available_from": "2026-10-22",
+    "available_to": "2027-02-19",
+    "is_active": true,
+    "created_at": "2026-10-22T17:30:01.646Z"
+  }
+},
+{
+  "model": "bookings.package",
+  "pk": 3,
+  "fields": {
+    "destination": 2,
+    "title": "Goa Weekend Party Trip",
+    "description": "Dosto ke saath 3 din ki masti, beach parties aur street food.",
+    "itinerary": "Day 1: Pahunchna aur Calangute beach\nDay 2: Anjuna flea market aur beach party\nDay 3: Check-out aur wapsi",
+    "price_per_person": "9500.00",
+    "duration_days": 3,
+    "max_guests": 10,
+    "seats_per_date": 25,
+    "available_from": "2026-10-22",
+    "available_to": "2027-02-19",
+    "is_active": true,
+    "created_at": "2026-10-22T17:30:01.689Z"
+  }
+},
+{
+  "model": "bookings.package",
+  "pk": 4,
+  "fields": {
+    "destination": 3,
+    "title": "Manali Snow Trail",
+    "description": "Baraf se dhake pahad, Solang Valley aur Rohtang ka safar.",
+    "itinerary": "Day 1: Pahunchna aur Mall Road\nDay 2: Solang Valley, snow activities\nDay 3: Atal Tunnel aur Sissu\nDay 4: Check-out aur wapsi",
+    "price_per_person": "11200.00",
+    "duration_days": 4,
+    "max_guests": 12,
+    "seats_per_date": 20,
+    "available_from": "2026-10-22",
+    "available_to": "2027-02-19",
+    "is_active": true,
+    "created_at": "2026-10-22T17:30:01.730Z"
+  }
+},
+{
+  "model": "bookings.package",
+  "pk": 5,
+  "fields": {
+    "destination": 3,
+    "title": "Manali Adventure Week",
+    "description": "Ek hafte ka adventure: paragliding, rafting aur trekking.",
+    "itinerary": "Day 1: Pahunchna\nDay 2: Paragliding at Solang\nDay 3: River rafting at Kullu\nDay 4: Hadimba Temple aur Old Manali\nDay 5: Jogini Falls trek\nDay 6: Free day, shopping\nDay 7: Wapsi",
+    "price_per_person": "16800.00",
+    "duration_days": 6,
+    "max_guests": 8,
+    "seats_per_date": 15,
+    "available_from": "2026-10-22",
+    "available_to": "2027-02-19",
+    "is_active": true,
+    "created_at": "2026-10-22T17:30:01.747Z"
+  }
+},
+{
+  "model": "bookings.package",
+  "pk": 6,
+  "fields": {
+    "destination": 4,
+    "title": "Jaipur Royal Heritage Tour",
+    "description": "Kile, mahal aur Rajasthani khana, 3 din me poora Jaipur.",
+    "itinerary": "Day 1: Amber Fort aur Jal Mahal\nDay 2: City Palace, Hawa Mahal, Jantar Mantar\nDay 3: Bapu Bazaar shopping aur wapsi",
+    "price_per_person": "9800.00",
+    "duration_days": 3,
+    "max_guests": 10,
+    "seats_per_date": 25,
+    "available_from": "2026-10-22",
+    "available_to": "2027-02-19",
+    "is_active": true,
+    "created_at": "2026-10-22T17:30:01.779Z"
+  }
+},
+{
+  "model": "bookings.package",
+  "pk": 7,
+  "fields": {
+    "destination": 5,
+    "title": "Rishikesh Rafting and Yoga",
+    "description": "Subah yoga, dopahar rafting, shaam ko Ganga aarti.",
+    "itinerary": "Day 1: Pahunchna aur Ganga aarti\nDay 2: Morning yoga aur river rafting\nDay 3: Laxman Jhula, cafes aur wapsi",
+    "price_per_person": "7500.00",
+    "duration_days": 3,
+    "max_guests": 12,
+    "seats_per_date": 20,
+    "available_from": "2026-10-22",
+    "available_to": "2027-02-19",
+    "is_active": true,
+    "created_at": "2026-10-22T17:30:01.812Z"
+  }
+},
+{
+  "model": "bookings.package",
+  "pk": 8,
+  "fields": {
+    "destination": 6,
+    "title": "Udaipur Lakes and Palaces",
+    "description": "Pichola jheel par boat ride aur City Palace ki shaan.",
+    "itinerary": "Day 1: Pahunchna aur Fateh Sagar sunset\nDay 2: City Palace aur Lake Pichola boat ride\nDay 3: Sajjangarh aur Saheliyon ki Bari\nDay 4: Check-out aur wapsi",
+    "price_per_person": "13200.00",
+    "duration_days": 4,
+    "max_guests": 8,
+    "seats_per_date": 15,
+    "available_from": "2026-10-22",
+    "available_to": "2027-02-19",
+    "is_active": true,
+    "created_at": "2026-10-22T17:30:01.843Z"
+  }
+},
+{
+  "model": "bookings.package",
+  "pk": 9,
+  "fields": {
+    "destination": 7,
+    "title": "Munnar Tea Hills Retreat",
+    "description": "Chai ke baagano ke beech shaant 4 din.",
+    "itinerary": "Day 1: Pahunchna aur tea garden walk\nDay 2: Eravikulam National Park\nDay 3: Mattupetty Dam aur Echo Point\nDay 4: Tea museum aur wapsi",
+    "price_per_person": "12400.00",
+    "duration_days": 4,
+    "max_guests": 10,
+    "seats_per_date": 18,
+    "available_from": "2026-10-22",
+    "available_to": "2027-02-19",
+    "is_active": true,
+    "created_at": "2026-10-22T17:30:01.873Z"
+  }
+},
+{
+  "model": "bookings.package",
+  "pk": 10,
+  "fields": {
+    "destination": 8,
+    "title": "Richi Family Retreat",
+    "description": "Family ke saath 2 din ka aaramdayak ghoomna.",
+    "itinerary": "Day 1: Pahunchna aur local sightseeing\nDay 2: Breakfast ke baad wapsi",
+    "price_per_person": "6800.00",
+    "duration_days": 2,
+    "max_guests": 12,
+    "seats_per_date": 25,
+    "available_from": "2026-10-22",
+    "available_to": "2027-02-19",
+    "is_active": true,
+    "created_at": "2026-10-22T17:30:01.902Z"
+  }
+},
+{
+  "model": "bookings.package",
+  "pk": 11,
+  "fields": {
+    "destination": 3,
+    "title": "Manali Snow Trip",
+    "description": "Barf, Solang Valley aur Mall Road ka mazaa.",
+    "itinerary": "Day 1: Arrival, Mall Road\r\nDay 2: Solang Valley (snow activities)\r\nDay 3: Rohtang ya Atal Tunnel side trip\r\nDay 4: Old Manali aur cafes\r\nDay 5: Wapsi",
+    "price_per_person": "5000.00",
+    "duration_days": 5,
+    "max_guests": 10,
+    "seats_per_date": 20,
+    "available_from": "2026-10-25",
+    "available_to": "2027-01-10",
+    "is_active": true,
+    "created_at": "2026-10-25T16:20:41.872Z"
+  }
+}
+]

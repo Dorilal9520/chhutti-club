@@ -128,12 +128,8 @@ if os.environ.get('CLOUDINARY_URL'):
 # Frontend CORS configuration
 # Frontend CORS configuration
 CORS_ALLOWED_ORIGINS = [
-    origin.strip()
-    for origin in os.environ.get(
-        'CORS_ALLOWED_ORIGINS',
-        'https://chhutti-club-frontend.onrender.com,http://localhost:5173'
-    ).split(',')
-    if origin.strip()
+    "http://localhost:5173",
+    "https://chhutti-club-web.onrender.com",
 ]
 
 # CSRF trusted origins

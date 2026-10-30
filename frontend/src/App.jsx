@@ -1,7 +1,9 @@
 import { Routes, Route } from 'react-router-dom';
+
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ProtectedRoute from './components/ProtectedRoute';
+
 import Home from './pages/Home';
 import PackageDetail from './pages/PackageDetail';
 import Login from './pages/Login';
@@ -12,12 +14,14 @@ export default function App() {
   return (
     <div className="flex min-h-screen flex-col">
       <Navbar />
+
       <div className="flex-1">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/packages/:id" element={<PackageDetail />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+
           <Route
             path="/my-bookings"
             element={
@@ -26,6 +30,7 @@ export default function App() {
               </ProtectedRoute>
             }
           />
+
           <Route
             path="*"
             element={
@@ -36,6 +41,7 @@ export default function App() {
           />
         </Routes>
       </div>
+
       <Footer />
     </div>
   );
